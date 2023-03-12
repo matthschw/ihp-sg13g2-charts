@@ -1,0 +1,35 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+  \begin{tikzpicture} 
+    \begin{axis}[ xlabel=$I_{\mathrm{C}}$ in \si{\milli\ampere}
+                , ylabel=$f_{\mathrm{T}}$ in \si{\giga\hertz}
+                , grid=both
+                , xtick={0.5,1,...,3.5}
+                , ytick={200,225,...,350}
+                , xmin=0.5
+                , xmax=3.5
+                , ymin=200
+                , ymax=350
+                , scale=1.5
+                , every axis plot/.append style=
+                  { thick
+                  , x filter/.code={\pgfmathparse{\pgfmathresult*1000.}\pgfmathresult}
+                  , y filter/.code={\pgfmathparse{\pgfmathresult*0.000000001}\pgfmathresult}
+                  , mark options={semithick,scale=1}
+                  }
+                ] 
+
+    \addplot[semithick] table [x=ic-vce0V6, y=ft-vce0V6, col sep=comma] {./csv/npn13G2-ft-vs-ic_ic-vce-sweep-no_selft.csv};
+    \node[anchor=north east,font=\small,inner sep=1pt] at (axis cs:3.011,313.3) {$V_{\mathrm{CE}}=\SI{0.6}{\volt}$};
+
+    \addplot[semithick] table [x=ic-vce1V2, y=ft-vce1V2, col sep=comma] {./csv/npn13G2-ft-vs-ic_ic-vce-sweep-no_selft.csv};
+    \node[anchor=south,font=\small,inner sep=1pt] at (axis cs:2.756,326.4) {$V_{\mathrm{CE}}=\SI{1.2}{\volt}$};
+
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}

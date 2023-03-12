@@ -1,0 +1,34 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+  \begin{tikzpicture} 
+    \begin{axis}[ xlabel=$I_{\mathrm{B}}$ in \SI{}{\micro\ampere}
+                , ylabel=$\beta$
+                , grid=both
+                , xtick={0.5,1,...,6}
+                , xmin=0.5
+                , xmax=6
+                , ymin=400
+                , ymax=800
+                , scale=1.5
+                , every axis plot/.append style=
+                  { thick
+                  , x filter/.code={\pgfmathparse{\pgfmathresult*1000000.}\pgfmathresult}
+                  , mark options={semithick,scale=1}
+                  }
+                ] 
+
+    \addplot[semithick] table [x=ib, y=beta0V6, col sep=comma] {./csv/npn13G2-beta-vs-ib_vce-sweep-selft.csv};
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:3,535.1) {$V_{\mathrm{CE}}=\SI{0.6}{\volt}$};
+
+
+    \addplot[semithick] table [x=ib, y=beta1V2, col sep=comma] {./csv/npn13G2-beta-vs-ib_vce-sweep-selft.csv};
+    \node[anchor=north east,font=\small,inner sep=1pt] at (axis cs:3,517.8) {$V_{\mathrm{CE}}=\SI{1.2}{\volt}$};
+
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}

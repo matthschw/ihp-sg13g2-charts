@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+  \begin{tikzpicture} 
+    \begin{axis}[ xlabel=$V_{\mathrm{BE}}$ in \SI{}{\volt}
+                , ylabel=$I_{\mathrm{B}}$ in \SI{}{\ampere}
+                , grid=both
+                , ymode=log
+                , xtick={0.6,0.65,...,1}
+                , xmin=0.6
+                , xmax=1
+                , ymin=1e-9
+                , ymax=1e-5
+                , scale=1.5
+                ] 
+
+    \addplot[semithick] table [x=vbe, y=ib, col sep=comma] {./csv/npn13G2-ib-vs-vbe_vce-1V2-no_selft.csv};
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}

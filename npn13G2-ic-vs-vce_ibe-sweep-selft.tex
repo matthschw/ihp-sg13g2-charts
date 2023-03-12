@@ -1,0 +1,50 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+
+
+\begin{document}
+  \begin{tikzpicture} 
+    \begin{axis}[ xlabel=$V_{\mathrm{CE}}$ in \SI{}{\volt}
+                , ylabel=$I_{\mathrm{C}}$ in \SI{}{\milli\ampere}
+                , grid=major
+                , xtick={0,0.2,...,1.6}
+                , ytick={0,0.5,...,3}
+                , xmin=0
+                , xmax=1.6
+                , ymin=0
+                , ymax=3
+                , every axis plot/.append style=
+                  { thick
+                  , y filter/.code={\pgfmathparse{\pgfmathresult*1000.}\pgfmathresult}
+                  , mark options={semithick,scale=1}
+                  }
+                , scale=1.5
+                ] 
+
+    \addplot[] table [x=vce, y=ic0u5, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv};
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,375.6E-3) {$I_{\mathrm{B}}=\SI{0.5}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic1u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv};    
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,683.1E-3) {$I_{\mathrm{B}}=\SI{1}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic2u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv};
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,1.175) {$I_{\mathrm{B}}=\SI{2}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic3u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv}; 
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,1.570) {$I_{\mathrm{B}}=\SI{3}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic4u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv};
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,1.907) {$I_{\mathrm{B}}=\SI{4}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic5u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv}; 
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,2.204) {$I_{\mathrm{B}}=\SI{5}{\micro\ampere}$};
+
+    \addplot[] table [x=vce, y=ic6u0, col sep=comma] {./csv/npn13G2-ic-vs-vce_ibe-sweep-selft.csv}; 
+    \node[anchor=south west,font=\small,inner sep=1pt] at (axis cs:0.8,2.471) {$I_{\mathrm{B}}=\SI{6}{\micro\ampere}$};
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}

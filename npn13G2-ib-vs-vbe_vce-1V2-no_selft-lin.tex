@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+  \begin{tikzpicture} 
+    \begin{axis}[ xlabel=$V_{\mathrm{BE}}$ in \SI{}{\volt}
+                , ylabel=$I_{\mathrm{B}}$ in \SI{}{\micro\ampere}
+                , grid=major
+                , ytick={0,0.5,1,1.5,2,2.5,3,3.5,4,4.5}
+                , xtick={0.6,0.65,...,1}
+                , xmin=0.6
+                , xmax=1
+                , ymin=0
+                , ymax=4.5
+                , every axis plot/.append style=
+                  { thick
+                  , y filter/.code={\pgfmathparse{\pgfmathresult*1000000.}\pgfmathresult}
+                  , mark options={semithick,scale=1}
+                  }
+                , scale=1.5
+                ] 
+
+    \addplot[] table [x=vbe, y=ib, col sep=comma] {./csv/npn13G2-ib-vs-vbe_vce-1V2-no_selft.csv};
+    \end{axis} 
+  \end{tikzpicture}
+\end{document}
