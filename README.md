@@ -9,11 +9,13 @@ Unless otherwise stated:
 
 ## npn13G2
 
-- input characteristic without self-heating
+- input characteristic without self-heating @ VCE=1.2V
   ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-lin](img/npn13G2-ib-vs-vbe_vce-1V2-no_selft-lin.png)
   ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-log](img/npn13G2-ib-vs-vbe_vce-1V2-no_selft-log.png)
 
-- input characteristic with self-heating
+- input characteristic with self-heating @ VCE=1.2V
+  ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-lin](img/npn13G2-ib-vs-vbe_vce-1V2-selft-lin.png)
+  ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-log](img/npn13G2-ib-vs-vbe_vce-1V2-selft-log.png)
 
 - output characteristic without self-heating
   ![npn13G2-ic-vs-vce_ibe-sweep-no_selft](img/npn13G2-ic-vs-vce_ibe-sweep-no_selft.png)
