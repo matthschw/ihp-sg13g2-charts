@@ -1,6 +1,6 @@
 # ihp-sg13g2-charts
 
-This repository contains some charts of some devices in 
+This repository contains some charts of devices in 
 [IHP SH13G2](https://github.com/IHP-GmbH/IHP-Open-PDK) that were 
 obtained with simulation via Cadence Spectre.
 Unless otherwise stated:
@@ -24,8 +24,10 @@ Unless otherwise stated:
   ![npn13G2-ic-vs-vce_ibe-sweep-selft](img/npn13G2-ic-vs-vce_ibe-sweep-selft.png)
 
 - gain without self-heating
+  ![npn13G2-beta-vs-ib_no-selft](img/npn13G2-beta-vs-ib_no-selft.png)
 
 - gain with self-heating
+  ![npn13G2-beta-vs-ib_selft](img/npn13G2-beta-vs-ib_selft.png)
 
 - transit frequency without self-heating
 
