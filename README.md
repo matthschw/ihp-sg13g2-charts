@@ -30,6 +30,7 @@ Unless otherwise stated:
   ![npn13G2-beta-vs-ib_selft](img/npn13G2-beta-vs-ib_selft.png)
 
 - transit frequency without self-heating
+  ![npn13G2-ft-vs-ic_ic-vce-sweep-no_selft](img/npn13G2-ft-vs-ic_ic-vce-sweep-no_selft.png)
 
 - transit frequency with self-heating
-
+  ![npn13G2-ft-vs-ic_ic-vce-sweep-selft](img/npn13G2-ft-vs-ic_ic-vce-sweep-selft.png)
