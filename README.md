@@ -10,6 +10,8 @@ Unless otherwise stated:
 ## npn13G2
 
 - input characteristic without self-heating
+  ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-lin](img/npn13G2-ib-vs-vbe_vce-1V2-no_selft-lin.png)
+  ![npn13G2-ib-vs-vbe_vce-1V2-no_selft-log](img/npn13G2-ib-vs-vbe_vce-1V2-no_selft-log.png)
 
 - input characteristic with self-heating
 
